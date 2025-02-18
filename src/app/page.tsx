@@ -12,15 +12,17 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)] space-y-4">
+          <li className="mb-2 p-3 rounded-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50">
             Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-2 py-1 rounded-md font-semibold transition-colors duration-200 hover:bg-black/10 dark:hover:bg-white/10">
               src/app/page.tsx
             </code>
             .
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li className="p-3 rounded-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+            Save and see your changes instantly.
+          </li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
