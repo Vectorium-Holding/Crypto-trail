@@ -21,6 +21,7 @@ const cinzel = Cinzel({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-         className={`${geistSans.variable} ${geistMono.variable}  ${cinzel.variable} antialiased`}
+         className={`${geistSans.variable} ${geistMono.variable}  ${cinzel.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>
