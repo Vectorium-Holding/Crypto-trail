@@ -1,12 +1,14 @@
+
 import Section5 from "@/components/Section5";
 import Section7 from "@/components/Section7";
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[#1b1c1d] flex flex-col items-center justify-center">
-      <Section5/>
-      <Section7 />
+    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div>
+      <HeroSection/>
     </div>
   );
 }
