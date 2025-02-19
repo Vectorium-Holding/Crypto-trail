@@ -1,4 +1,7 @@
-import HeroSection from "@/components/HeroSection";
+
+import Section5 from "@/components/Section5";
+import Section7 from "@/components/Section7";
+
 import Image from "next/image";
 
 export default function Home() {
