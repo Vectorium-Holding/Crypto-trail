@@ -1,3 +1,11 @@
+import ForgotPassword from "@/components/ForgotPassword/page";
+import Login from "@/components/Login/page";
+import SignUp from "@/components/SignUp/page";
+
+export default function Home() {
+  return (
+    <div>
+      <ForgotPassword/>
 
 import Section5 from "@/components/Section5";
 import Section7 from "@/components/Section7";
