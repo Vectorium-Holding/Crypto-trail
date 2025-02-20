@@ -4,15 +4,15 @@ import { Label } from './ui/label'
 
 const Section5 = () => {
   return (
-      <section className="max-w-[1035px] bg-[#1b1c1d] text-[#f2e782ff]">
-          <div className="w-full h-full flex flex-col items-start">
+      <section className="min-w-full bg-[#1b1c1d] text-[#f2e782ff]">
+          <div className="w-full h-full flex flex-col items-center">
               <div className='font-prata leading-tight mb-8'>
                   <Label className="text-[51px] block ">
                       Democratizing Access to the Carbon Offset Market
                   </Label>
                   {/* <Label className="text-[45px]"> Market </Label> */}
               </div>
-              <div className="font-prata grid grid-cols-1 md:grid-cols-3 gap-8 ">
+              <div className="font-prata mx-20 grid grid-cols-1 md:grid-cols-3 gap-8 ">
                   <Card className="bg-transparent border-none">
                       <CardContent >
                           <CardTitle className="text-[22.5px] font-semibold text-[#f2e782ff] mb-4">For Individuals</CardTitle>

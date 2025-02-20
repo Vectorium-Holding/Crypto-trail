@@ -4,9 +4,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
 
 const Section7 = () => {
   return (
-    <section className="max-w-[1035px] bg-[#1b1c1d] text-[#f2e782ff] mt-28">
-      <div className='w-full h-full flex flex-col items-start'>
-        <div className='font-prata leading-tight mb-4 w-full'>
+    <section className="min-w-full flex items-center bg-[#1b1c1d] pt-10 text-[#f2e782ff]">
+      <div className='w-full h-full flex flex-col items-center'>
+        <div className='font-prata leading-tight mb-4'>
 
           <Label className="text-[51px] block">
             Leveraging Crypto Finance for Sustainable Impact
