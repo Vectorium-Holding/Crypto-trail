@@ -15,14 +15,15 @@ import Section3 from "@/components/Section3";
 export default function Home() {
   return (
     <div>
-      <Navbar/>
-      <HeroSection/>
-      <Section3/>
-      <Section4/>
-      <Section5/>
-      <Section7/>
-      <ForgotPassword/>
-      <Login/>
+      <Navbar />
+      {/* <dashboard/> */}
+      <HeroSection />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section7 />
+      <ForgotPassword />
+      <Login />
     </div>
   );
 }
