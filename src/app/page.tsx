@@ -22,15 +22,16 @@ export default function Home() {
     <div className="bg-[#1b1c1d] h-screen flex flex-col items-center justify-center">
       <Graph/>
       <Graph2/>
-      <Navbar/>
+      {/* <Navbar/>
       <HeroSection/>
       <Section2/>
       <Section3/>
       <Section4/>
       <Section5/>
+      <Section6/>
       <Section7/>
       <ForgotPassword/>
-      <Login/>
+      <Login/> */}
     </div>
   );
 }
