@@ -125,11 +125,13 @@ const chartConfig = {
   },
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    // color: "hsl(var(--chart-1))",
+    color:"rgb(199, 136, 0)"
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color:"rgb(105, 72, 0)"
+    // color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
 
