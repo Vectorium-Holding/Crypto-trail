@@ -61,15 +61,16 @@ const Graph = () => {
                 </BarChart>
 
                 {/* Define the vertical gradient */}
-                <svg width="0" height="0">
+                
+            </ChartContainer>
+            <svg width="0" height="0">
                     <defs>
                         <linearGradient id="verticalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stopColor="#ca8a04" /> {/* yellow-600 */}
                             <stop offset="100%" stopColor="#713f12" /> {/* yellow-900 */}
                         </linearGradient>
                     </defs>
-                </svg>
-            </ChartContainer>
+            </svg>
 
             <hr className="border-t border-gray-300 my-4"></hr>
         </section>
