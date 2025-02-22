@@ -38,7 +38,31 @@ const Section6 = () => {
 
              
               <div className="absolute inset-0 flex items-center justify-center pb-2">
-                  <Image src="/image.png" alt="Decorative" width={300} height={300} /> 
+                  <div className="grid grid-cols-2 gap-2 relative ">
+                      <div className="w-32 h-32 bg-[#3a3b3cff] flex items-center justify-end text-white text-xl rounded-full relative">
+                          <p className='ml-16 mt-8'>1</p>
+                          <div className="w-16 h-16 bg-inherit clip-triangle mt-16 left-0"></div>
+                      </div>
+
+
+                      <div className="w-32 h-32 bg-[#3a3b3cff] flex items-center justify-start text-white text-xl rounded-full relative">
+                          <p className='ml-12 mt-8'>2</p>
+                          <div className="mr-12 absolute w-16 h-16 bg-inherit clip-triangle mt-16 rotate-90"></div>
+                      </div>
+
+
+                      <div className="w-32 h-32 bg-[#3a3b3cff] flex items-center justify-end text-white text-xl rounded-full relative">
+                          <p className='mt-8 mb-8 mr-12'>3</p>
+                          <div className="ml-12 absolute w-16 h-16 bg-inherit clip-triangle mb-16 rotate-[270deg]"></div>
+
+                      </div>
+
+
+                      <div className="w-32 h-32 bg-[#3a3b3cff] flex items-center justify-start text-white text-xl rounded-full relative">
+                          <p className='ml-12 mt-8 mb-8'>4</p>
+                          <div className="mr-12 absolute w-16 h-16 bg-inherit clip-triangle mb-16 rotate-180"></div>
+                      </div>
+                  </div> 
               </div>
           </div>
       </section>
