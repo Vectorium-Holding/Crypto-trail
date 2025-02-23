@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Sidebar = () => {
   return (
-    <div className="w-full bg-gray-800 text-yellow-400 flex flex-col justify-between h-full text-center p-4">
+    <div className="absolute w-[400px] mt-20 bg-gray-800 text-yellow-400 flex flex-col justify-between h-full text-center p-4">
       {/* Top Section */}
       <div className="flex flex-col items-center space-y-4">
         {/* Top Icons */}

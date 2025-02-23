@@ -1,14 +1,14 @@
 import React from 'react'
-import { Label } from './ui/label'
-import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
+import { Label } from '../ui/label'
+import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
 
 const Section7 = () => {
   return (
-    <section className="min-w-full flex items-center bg-[#1b1c1d] pt-10 text-[#f2e782ff]">
+    <section className="min-w-full flex items-center bg-[#1b1c1d] pt-10 text-[#f2e782ff] pb-8">
       <div className='w-full h-full flex flex-col items-center'>
         <div className='font-prata leading-tight mb-4'>
 
-          <Label className="text-[51px] block">
+          <Label className="font-serif  text-9xl md:text-[2.8rem] font-medium bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text text-transparent leading-relaxe mt-16 block">
             Leveraging Crypto Finance for Sustainable Impact
           </Label>
           {/* <Label className="text-[45px]"> Impact </Label> */}
