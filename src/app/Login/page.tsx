@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import { supabase } from "../api/auth/supabaseClient";
-import Navbar from "@/components/sections/Navbar";
+import Navbar from "@/components/Navbar";
 export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

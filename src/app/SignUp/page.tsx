@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import Link from "next/link";
-import Navbar from "@/components/sections/Navbar";
+import Navbar from "@/components/Navbar";
 export default function SignUp() {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");

@@ -22,6 +22,8 @@ const DropDown = () => {
       };
 
     const handleLogout = () => {
+      // Clear any stored authentication tokens/data
+
       localStorage.removeItem('token'); // Adjust based on your auth implementation
       setIsLoggedIn(false);
       router.push('/');
