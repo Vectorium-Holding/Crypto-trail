@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cinzel, Playfair_Display} from "next/font/google";
+import { Geist, Geist_Mono, Cinzel, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 
@@ -37,15 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <head>
-          <link rel="icon" href="favicon.png" sizes="any" />
-        </head>
+      <head>
+        <link rel="icon" href="favicon.png" sizes="any" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${cinzel.variable} ${playfair.variable}antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable}antialiased`}
       >
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

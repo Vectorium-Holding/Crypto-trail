@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import * as React from "react";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import Image from "next/image";
-
 
 import {
   Card,
@@ -11,7 +10,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
@@ -19,38 +18,38 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import { Button } from "./ui/button";
 
 const slideOptions = [
-    {
-        percentage: "6.5%",
-        currency: "Bitcoin",
-        value: "Peak Set",
-        color:"#F57E4C"
-    },
+  {
+    percentage: "6.5%",
+    currency: "Bitcoin",
+    value: "Peak Set",
+    color: "#F57E4C",
+  },
 
-    {
-        percentage: "4.5%",
-        currency: "Bitcoin",
-        value: "Peak Set",
-        color:"#2ADC86"
-    },
+  {
+    percentage: "4.5%",
+    currency: "Bitcoin",
+    value: "Peak Set",
+    color: "#2ADC86",
+  },
 
-    {
-        percentage: "6.5%",
-        currency: "Bitcoin",
-        value: "Peak Set",
-        color:"#2ADC86"
-    }
-]
+  {
+    percentage: "6.5%",
+    currency: "Bitcoin",
+    value: "Peak Set",
+    color: "#2ADC86",
+  },
+];
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
   { date: "2024-04-02", desktop: 97, mobile: 180 },
@@ -143,7 +142,7 @@ const chartData = [
   { date: "2024-06-28", desktop: 149, mobile: 200 },
   { date: "2024-06-29", desktop: 103, mobile: 160 },
   { date: "2024-06-30", desktop: 446, mobile: 400 },
-]
+];
 
 const chartConfig = {
   visitors: {
@@ -157,178 +156,163 @@ const chartConfig = {
     label: "Mobile",
     color: "hsl(var(--chart-2))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export default function TrendGraph() {
-  const [timeRange, setTimeRange] = React.useState("90d")
+  const [timeRange, setTimeRange] = React.useState("90d");
 
   const filteredData = chartData.filter((item) => {
-    const date = new Date(item.date)
-    const referenceDate = new Date("2024-06-30")
-    let daysToSubtract = 90
+    const date = new Date(item.date);
+    const referenceDate = new Date("2024-06-30");
+    let daysToSubtract = 90;
     if (timeRange === "30d") {
-      daysToSubtract = 30
+      daysToSubtract = 30;
     } else if (timeRange === "7d") {
-      daysToSubtract = 7
+      daysToSubtract = 7;
     }
-    const startDate = new Date(referenceDate)
-    startDate.setDate(startDate.getDate() - daysToSubtract)
-    return date >= startDate
-  })
+    const startDate = new Date(referenceDate);
+    startDate.setDate(startDate.getDate() - daysToSubtract);
+    return date >= startDate;
+  });
 
   return (
-    <div className="bg-[#e7e4e4] mx-12 mt-4 w-3/5 h-1/6 p-6 rounded-2xl">
-        <Card className="p-6 border-none">
-            <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
-                <div className="grid flex-1 gap-1 text-center sm:text-left">
-                <CardTitle>Carbon Credits</CardTitle>
-                </div>
-                <Select value={timeRange} onValueChange={setTimeRange}>
-                <SelectTrigger
-                    className="w-[160px] rounded-lg sm:ml-auto"
-                    aria-label="Select a value"
-                >
-                    <SelectValue placeholder="Last 3 months" />
-                </SelectTrigger>
-                <SelectContent className="rounded-xl">
-                    <SelectItem value="90d" className="rounded-lg">
-                    Last 3 months
-                    </SelectItem>
-                    <SelectItem value="30d" className="rounded-lg">
-                    Last 30 days
-                    </SelectItem>
-                    <SelectItem value="7d" className="rounded-lg">
-                    Last 7 days
-                    </SelectItem>
-                </SelectContent>
-                </Select>
-            </CardHeader>
-            <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
-                <ChartContainer
-                config={chartConfig}
-                className="aspect-auto h-[250px] w-full"
-                >
-                <AreaChart data={filteredData}>
-                    <defs>
-                    <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                        <stop
-                        offset="5%"
-                        stopColor="#28E989"
-                        stopOpacity={0.8}
-                        />
-                        <stop
-                        offset="95%"
-                        stopColor="#A7F8D0"
-                        stopOpacity={0.1}
-                        />
-                    </linearGradient>
-                    <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                        <stop
-                        offset="5%"
-                        stopColor="#F6AA8A"
-                        stopOpacity={0.8}
-                        />
-                        <stop
-                        offset="95%"
-                        stopColor="#F57E4C"
-                        stopOpacity={0.1}
-                        />
-                    </linearGradient>
-                    </defs>
-                    <CartesianGrid vertical={false} />
-                    <XAxis
-                    dataKey="date"
-                    tickLine={false}
-                    axisLine={false}
-                    tickMargin={8}
-                    minTickGap={32}
-                    tickFormatter={(value) => {
-                        const date = new Date(value)
-                        return date.toLocaleDateString("en-US", {
+    <div className="mx-12 mt-4 h-1/6 w-3/5 rounded-2xl bg-[#e7e4e4] p-6">
+      <Card className="border-none p-6">
+        <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
+          <div className="grid flex-1 gap-1 text-center sm:text-left">
+            <CardTitle>Carbon Credits</CardTitle>
+          </div>
+          <Select value={timeRange} onValueChange={setTimeRange}>
+            <SelectTrigger
+              className="w-[160px] rounded-lg sm:ml-auto"
+              aria-label="Select a value"
+            >
+              <SelectValue placeholder="Last 3 months" />
+            </SelectTrigger>
+            <SelectContent className="rounded-xl">
+              <SelectItem value="90d" className="rounded-lg">
+                Last 3 months
+              </SelectItem>
+              <SelectItem value="30d" className="rounded-lg">
+                Last 30 days
+              </SelectItem>
+              <SelectItem value="7d" className="rounded-lg">
+                Last 7 days
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </CardHeader>
+        <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
+          <ChartContainer
+            config={chartConfig}
+            className="aspect-auto h-[250px] w-full"
+          >
+            <AreaChart data={filteredData}>
+              <defs>
+                <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#28E989" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#A7F8D0" stopOpacity={0.1} />
+                </linearGradient>
+                <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#F6AA8A" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#F57E4C" stopOpacity={0.1} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="date"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                minTickGap={32}
+                tickFormatter={(value) => {
+                  const date = new Date(value);
+                  return date.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  });
+                }}
+              />
+              <ChartTooltip
+                cursor={false}
+                content={
+                  <ChartTooltipContent
+                    labelFormatter={(value) => {
+                      return new Date(value).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
-                        })
+                      });
                     }}
-                    />
-                    <ChartTooltip
-                    cursor={false}
-                    content={
-                        <ChartTooltipContent
-                        labelFormatter={(value) => {
-                            return new Date(value).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                            })
-                        }}
-                        indicator="dot"
-                        />
-                    }
-                    />
-                    <Area
-                    dataKey="mobile"
-                    type="natural"
-                    fill="url(#fillMobile)"
-                    stroke="var(--color-mobile)"
-                    stackId="a"
-                    />
-                    <Area
-                    dataKey="desktop"
-                    type="natural"
-                    fill="url(#fillDesktop)"
-                    stroke="var(--color-desktop)"
-                    stackId="a"
-                    />
-                    <ChartLegend content={<ChartLegendContent />} />
-                </AreaChart>
-                </ChartContainer>
-            </CardContent>
-        </Card>
-
-        <div className="flex mt-4">
-            <div className="flex">
-                <div className="rounded-full">
-                    <Image
-                        src="/carbon-profile-pic.png"
-                        alt="Currency"
-                        width={50}
-                        height={50}
-                        className="rounded-full"
-                    />
-                </div>
-                <div className="space-y-1">
-                    <h2 className="text-lg font-semibold text-black ml-4">
-                        Carbon Credit
-                    </h2>
-                    
-                    <div className="flex ml-4">
-                        <span className="text-xs text-gray-700 mr-1">Connecticut</span>
-                        <span className="text-xs text-gray-700">Tenessee</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div className="flex ml-36">
-                {
-                    slideOptions.map((entry, index) => (
-                        <div className="flex flex-col mr-2" key={index}>
-                            <span className="text-xs text-gray-500" >{entry.currency}</span>
-                            <span style={{color:`${entry.color}`}} className="text-base font-bold">{entry.percentage}</span>
-                            <span className="text-xs text-gray-500" >{entry.value}</span>
-                        </div>
-                    ))
+                    indicator="dot"
+                  />
                 }
+              />
+              <Area
+                dataKey="mobile"
+                type="natural"
+                fill="url(#fillMobile)"
+                stroke="var(--color-mobile)"
+                stackId="a"
+              />
+              <Area
+                dataKey="desktop"
+                type="natural"
+                fill="url(#fillDesktop)"
+                stroke="var(--color-desktop)"
+                stackId="a"
+              />
+              <ChartLegend content={<ChartLegendContent />} />
+            </AreaChart>
+          </ChartContainer>
+        </CardContent>
+      </Card>
 
+      <div className="mt-4 flex">
+        <div className="flex">
+          <div className="rounded-full">
+            <Image
+              src="/carbon-profile-pic.png"
+              alt="Currency"
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+          </div>
+          <div className="space-y-1">
+            <h2 className="ml-4 text-lg font-semibold text-black">
+              Carbon Credit
+            </h2>
+
+            <div className="ml-4 flex">
+              <span className="mr-1 text-xs text-gray-700">Connecticut</span>
+              <span className="text-xs text-gray-700">Tenessee</span>
             </div>
-
-            <Button
-                variant={"outline"}
-                className="text-black bg-gray-300 rounded-xl border-gray-400 ml-20"
-                size="lg"
-            >
-                $89,000
-            </Button>
+          </div>
         </div>
+
+        <div className="ml-36 flex">
+          {slideOptions.map((entry, index) => (
+            <div className="mr-2 flex flex-col" key={index}>
+              <span className="text-xs text-gray-500">{entry.currency}</span>
+              <span
+                style={{ color: `${entry.color}` }}
+                className="text-base font-bold"
+              >
+                {entry.percentage}
+              </span>
+              <span className="text-xs text-gray-500">{entry.value}</span>
+            </div>
+          ))}
+        </div>
+
+        <Button
+          variant={"outline"}
+          className="ml-20 rounded-xl border-gray-400 bg-gray-300 text-black"
+          size="lg"
+        >
+          $89,000
+        </Button>
+      </div>
     </div>
-  )
+  );
 }

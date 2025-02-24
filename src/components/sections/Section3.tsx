@@ -1,24 +1,23 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
 const Section3: React.FC = () => {
-
   const [count, setCount] = useState<number>(0);
 
   const handleIncrement = () => {
-    setCount(prevCount => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   return (
-    <div className="container  px-6 py-12 bg-[#1B1C1D] min-h-screen min-w-full flex items-center">
-      <div className="flex flex-col md:flex-row w-full gap-12 items-center">
+    <div className="container flex min-h-screen min-w-full items-center bg-[#1B1C1D] px-6 py-12">
+      <div className="flex w-full flex-col items-center gap-12 md:flex-row">
         {/* Left - Image */}
         <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="flex items-center justify-center">
             <Image
@@ -38,9 +37,7 @@ const Section3: React.FC = () => {
           transition={{ duration: 0.7 }}
         >
           <div className="flex flex-col justify-center space-y-6">
-            <h1
-              className="font-serif text-4xl md:text-[2.8rem] font-medium bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text text-transparent leading-relaxe mt-4"
-            >
+            <h1 className="leading-relaxe mt-4 bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text font-serif text-4xl font-medium text-transparent md:text-[2.8rem]">
               Seamless Trading for a Greener Future
             </h1>
             <motion.div
@@ -48,7 +45,7 @@ const Section3: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9 }}
             >
-              <div className="text-[#cfcbbf] space-y-6">
+              <div className="space-y-6 text-[#cfcbbf]">
                 {/** Steps */}
                 {[
                   {
@@ -68,13 +65,15 @@ const Section3: React.FC = () => {
                     desc: "Track your contribution to global carbon reduction efforts in real-time.",
                   },
                 ].map((step, index) => (
-                  <div key={index} className="text-xl font-raleway border-[#535455ff] border-l-8 pl-4 ml-3" 
-                        style={{ marginLeft: `${(index + 1) * 25}px`}}
+                  <div
+                    key={index}
+                    className="ml-3 border-l-8 border-[#535455ff] pl-4 font-raleway text-xl"
+                    style={{ marginLeft: `${(index + 1) * 25}px` }}
                   >
-                    <h2 className="text-2xl font-semibold mb-2">{step.title}</h2>
-                    <p className="text-xl">{step.desc}
-                    </p>
-                      
+                    <h2 className="mb-2 text-2xl font-semibold">
+                      {step.title}
+                    </h2>
+                    <p className="text-xl">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -84,6 +83,6 @@ const Section3: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Section3
+export default Section3;

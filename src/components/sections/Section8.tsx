@@ -1,82 +1,90 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 
-import { Label } from '../ui/label'
+import { Label } from "../ui/label";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const Section8 = () => {
   return (
-      <section className="min-w-full text-black bg-[#f2e782ff]">
-        <div className="w-full h-full flex flex-col">
-            <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-            >
-                <div className='font-raleway font-400 p-32 leading-tight'>
-                    <Label className="font-serif  text-9xl md:text-[2.8rem] font-medium leading-none">
-                        Join the Vectorium Movement: Invest in a <br/> Greener Tomorrow
-                    </Label>
-                </div>
-            </motion.div>
+    <section className="min-w-full bg-[#f2e782ff] text-black">
+      <div className="flex h-full w-full flex-col">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="font-400 p-32 font-raleway leading-tight">
+            <Label className="font-serif text-9xl font-medium leading-none md:text-[2.8rem]">
+              Join the Vectorium Movement: Invest in a <br /> Greener Tomorrow
+            </Label>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="flex flex-col items-start pb-4 pl-[300px]">
+        {/* Triangle */}
+        <div className="flex flex-row">
+          <div className="ml-[75px] h-0 w-0 border-b-[110px] border-l-[60px] border-r-[60px] border-solid border-b-[#555] border-l-transparent border-r-transparent">
+            <div className="text-raleway my-12 text-xl text-[#cfcbbf]">1</div>
+          </div>
+          <div className="ml-2 mt-8 flex flex-col border-b text-black">
+            <div className="font-prata text-2xl font-normal">Trade</div>
+            <div className="text-lg font-normal">
+              Buy and sell VCCs on our secure platform.
+            </div>
+          </div>
         </div>
-
-        <div className="flex flex-col items-start pl-[300px] pb-4">
-
-            {/* Triangle */}
-            <div className='flex flex-row'>
-                <div className="w-0 h-0 border-l-[60px] border-r-[60px] border-b-[110px] border-solid border-l-transparent border-r-transparent border-b-[#555] ml-[75px]">
-                    <div className='text-xl text-raleway text-[#cfcbbf] my-12'>
-                        1
-                    </div>
-                </div>
-                <div className='flex flex-col text-black mt-8 border-b ml-2'>
-                    <div className='font-normal text-2xl font-prata'>Trade</div>
-                    <div className='font-normal text-lg'>Buy and sell VCCs on our secure platform.</div>
-                </div>
+        {/* Trapezoid 1 */}
+        <div className="flex flex-row">
+          <div className="ml-[20px] mt-2 h-0 w-[230px] border-b-[100px] border-l-[55px] border-r-[55px] border-solid border-b-[#555] border-l-transparent border-r-transparent">
+            <div className="text-raleway my-10 text-center text-xl text-[#cfcbbf]">
+              2
             </div>
-            {/* Trapezoid 1 */}
-            <div className='flex flex-row'>
-                <div className="w-[230px] h-0 border-b-[100px] border-l-[55px] mt-2 border-r-[55px] border-solid border-l-transparent border-r-transparent border-b-[#555] ml-[20px]">
-                    <div className='text-xl text-raleway text-[#cfcbbf] my-10 text-center'>
-                        2
-                    </div>
-                </div>
-                <div className='flex flex-col text-black mt-8 border-b ml-2'>
-                        <div className='font-normal text-2xl font-prata'>Offset</div>
-                        <div className='font-normal text-lg'>Neutralize your carbon footprint with ease.</div>
-                </div>
+          </div>
+          <div className="ml-2 mt-8 flex flex-col border-b text-black">
+            <div className="font-prata text-2xl font-normal">Offset</div>
+            <div className="text-lg font-normal">
+              Neutralize your carbon footprint with ease.
             </div>
-            {/* Trapezoid 2 */}
-            <div className='flex flex-row'>
-                <div className="w-[340px] h-0 border-b-[100px] border-l-[55px] mt-2 border-r-[55px] border-solid border-l-transparent border-r-transparent border-b-[#555] ml-[-35px]">
-                    <div className='text-xl text-raleway text-[#cfcbbf] my-10 text-center'>
-                        3
-                    </div>
-                </div>
-                <div className='flex flex-col text-black mt-8 border-b ml-2'>
-                        <div className='font-normal text-2xl font-prata'>Impact</div>
-                        <div className='font-normal text-lg'>Support verified climate action projects globally.</div>
-                </div>
-            </div>
-            {/* Trapezoid 3 */}
-            <div className='flex flex-row'>
-                <div className="w-[450px] h-0 border-b-[100px] border-l-[55px] mt-2 border-r-[55px] border-solid border-l-transparent border-r-transparent border-b-[#555] ml-[-90px]">
-                    <div className='text-xl text-raleway text-[#cfcbbf] my-10 text-center'>
-                            4
-                    </div>
-                </div>
-                <div className='flex flex-col text-black mt-8 ml-2'>
-                        <div className='font-normal text-2xl font-prata'>Grow</div>
-                        <div className='font-normal text-lg'>Participate in the rapidly expanding carbon market.</div>
-                </div>
-            </div>
+          </div>
         </div>
+        {/* Trapezoid 2 */}
+        <div className="flex flex-row">
+          <div className="ml-[-35px] mt-2 h-0 w-[340px] border-b-[100px] border-l-[55px] border-r-[55px] border-solid border-b-[#555] border-l-transparent border-r-transparent">
+            <div className="text-raleway my-10 text-center text-xl text-[#cfcbbf]">
+              3
+            </div>
+          </div>
+          <div className="ml-2 mt-8 flex flex-col border-b text-black">
+            <div className="font-prata text-2xl font-normal">Impact</div>
+            <div className="text-lg font-normal">
+              Support verified climate action projects globally.
+            </div>
+          </div>
+        </div>
+        {/* Trapezoid 3 */}
+        <div className="flex flex-row">
+          <div className="ml-[-90px] mt-2 h-0 w-[450px] border-b-[100px] border-l-[55px] border-r-[55px] border-solid border-b-[#555] border-l-transparent border-r-transparent">
+            <div className="text-raleway my-10 text-center text-xl text-[#cfcbbf]">
+              4
+            </div>
+          </div>
+          <div className="ml-2 mt-8 flex flex-col text-black">
+            <div className="font-prata text-2xl font-normal">Grow</div>
+            <div className="text-lg font-normal">
+              Participate in the rapidly expanding carbon market.
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div className='pl-[210px] text-black pb-24 mt-2 font-raleway font-normal text-lg'>Be part of the solution to climate change. Join Vectorium today and trade for a sustainable future.</div>
-      </section>
-  )
-}
+      <div className="mt-2 pb-24 pl-[210px] font-raleway text-lg font-normal text-black">
+        Be part of the solution to climate change. Join Vectorium today and
+        trade for a sustainable future.
+      </div>
+    </section>
+  );
+};
 
-export default Section8
+export default Section8;

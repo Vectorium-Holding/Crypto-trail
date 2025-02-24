@@ -8,20 +8,20 @@ import Section7 from "@/components/sections/Section7";
 import Section6 from "@/components/sections/Section6";
 import Section8 from "@/components/sections/Section8";
 
-const Home = ()=> {
+const Home = () => {
   return (
     <>
-      <Navbar/>
-      <HeroSection/>
-      <Section2/>
-      <Section3/>
-      <Section4/>
-      <Section5/>
-      <Section6/>
-      <Section7/>
-      <Section8/>
+      <Navbar />
+      <HeroSection />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
     </>
   );
-}
+};
 
-export default Home
+export default Home;

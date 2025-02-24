@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Section4 = () => {
   return (
-    <section className="bg-[#1b1c1d] w-full text-gray-50 py-10 flex">
-      <div className="flex flex-col md:flex-row items-center">
+    <section className="flex w-full bg-[#1b1c1d] py-10 text-gray-50">
+      <div className="flex flex-col items-center md:flex-row">
         {/* Image Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,13 +25,13 @@ const Section4 = () => {
         </motion.div>
 
         {/* Text Section */}
-        <div className="md:w-3/5 px-5 md:px-10 -mt-20">
-          <h1 className="font-serif text-4xl md:text-[2.8rem] font-medium bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text text-transparent leading-relaxe">
+        <div className="-mt-20 px-5 md:w-3/5 md:px-10">
+          <h1 className="leading-relaxe bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text font-serif text-4xl font-medium text-transparent md:text-[2.8rem]">
             Blockchain-Secured Transactions, Unparalleled Transparency
           </h1>
 
           {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-[#cfcbbf] gap-6 mt-10">
+          <div className="mt-10 grid grid-cols-1 gap-6 text-[#cfcbbf] md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: "/colorShield.svg",
@@ -49,7 +49,10 @@ const Section4 = () => {
                 text: "Instant confirmation of trades and immediate updates to your carbon offset portfolio.",
               },
             ].map((feature, index) => (
-              <div key={index} className="flex flex-col items-left text-center text-xl font-raleway ">
+              <div
+                key={index}
+                className="items-left flex flex-col text-center font-raleway text-xl"
+              >
                 <Image
                   src={feature.icon}
                   width={60}
@@ -57,8 +60,10 @@ const Section4 = () => {
                   alt={feature.title}
                   className="mb-3"
                 />
-                <h2 className="text-[30px] mt-2 font-semibold text-left">{feature.title}</h2>
-                <p className="text-[20px] mt-6 text-left">{feature.text}</p>
+                <h2 className="mt-2 text-left text-[30px] font-semibold">
+                  {feature.title}
+                </h2>
+                <p className="mt-6 text-left text-[20px]">{feature.text}</p>
               </div>
             ))}
           </div>

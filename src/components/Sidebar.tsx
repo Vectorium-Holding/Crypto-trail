@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Sidebar = () => {
   return (
-    <div className=" w-2/6 fixed right-0 top-16 mt-4 mb-4 bg-gradient-to-r from-[#494848] via-[#343431] to-[#33322f] text-[#C4A44D] leading-relaxe flex flex-col justify-between h-full text-center p-4">
+    <div className="leading-relaxe fixed right-0 top-16 mb-4 mt-4 flex h-full w-2/6 flex-col justify-between bg-gradient-to-r from-[#494848] via-[#343431] to-[#33322f] p-4 text-center text-[#C4A44D]">
       {/* Top Section */}
       <div className="flex flex-col items-center space-y-4">
         {/* Top Icons */}
@@ -26,7 +26,7 @@ const Sidebar = () => {
         <Separator className="w-5/6 bg-gray-400" />
 
         {/* Trade Card */}
-        <Card className="w-5/6 flex items-center justify-center space-x-3 p-3 rounded-xl bg-[#33322f]">
+        <Card className="flex w-5/6 items-center justify-center space-x-3 rounded-xl bg-[#33322f] p-3">
           <Home size={24} />
           <p>Trade</p>
         </Card>
@@ -53,7 +53,7 @@ const Sidebar = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="w-5/6 self-center space-y-3">
+      <div className="w-5/6 space-y-3 self-center">
         <div className="flex justify-between">
           <p>Royal</p>
 

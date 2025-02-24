@@ -46,7 +46,6 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -62,10 +61,10 @@ export default function Login() {
         } else {
           setSuccess("Login successful! Redirecting...");
           setIsLoggedIn(true);
-          router.push("/Dashboard")
+          router.push("/Dashboard");
           // Store token or redirect user
           console.log("User Data:", data);
-          alert(`This is Access Token Token ${data.session.access_token}`)
+          alert(`This is Access Token Token ${data.session.access_token}`);
         }
       })
       .catch(() => {
@@ -78,12 +77,10 @@ export default function Login() {
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div
-          className="min-h-screen bg-gradient-to-br 
-                    bg-cover bg-[#1b1c1d] text-[#A8955A] from-primary-50 to-primary-100 
-                    flex items-center justify-center pt-20 mt-10"
-          style={{ backgroundImage: "url('/carbon-credit.png')" }}
+        className="from-primary-50 to-primary-100 mt-10 flex min-h-screen items-center justify-center bg-[#1b1c1d] bg-gradient-to-br bg-cover pt-20 text-[#A8955A]"
+        style={{ backgroundImage: "url('/carbon-credit.png')" }}
       >
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -91,8 +88,8 @@ export default function Login() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <div className="bg-[#211E1E] rounded-2xl shadow-xl p-8 space-y-6 mb-10">
-            <div className="text-center space-y-2">
+          <div className="mb-10 space-y-6 rounded-2xl bg-[#211E1E] p-8 shadow-xl">
+            <div className="space-y-2 text-center">
               <h1 className="text-3xl font-bold tracking-tighter">
                 Welcome Back
               </h1>
@@ -132,7 +129,7 @@ export default function Login() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 transform text-gray-500 hover:text-gray-700"
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
@@ -146,7 +143,7 @@ export default function Login() {
                 </div>
                 <Link
                   href="/ForgotPassword"
-                  className="text-sm text-primary-500 hover:text-primary-600"
+                  className="text-primary-500 hover:text-primary-600 text-sm"
                 >
                   Forgot password?
                 </Link>
@@ -174,7 +171,7 @@ export default function Login() {
                 variant="outline"
                 className="w-full bg-[#A8955A] text-black"
               >
-                <Github className="mr-2 w-4 h-4" />
+                <Github className="mr-2 h-4 w-4" />
                 Github
               </Button>
 
@@ -182,7 +179,7 @@ export default function Login() {
                 variant="outline"
                 className="w-full bg-[#A8955A] text-black"
               >
-                <Mail className="mr-2 w-4 h-4" />
+                <Mail className="mr-2 h-4 w-4" />
                 Google
               </Button>
             </div>
@@ -191,7 +188,7 @@ export default function Login() {
               Don't have an account?
               <Link
                 href="/SignUp"
-                className="text-primary-500 hover:text-primary-600 font-medium pl-2"
+                className="text-primary-500 hover:text-primary-600 pl-2 font-medium"
               >
                 Sign Up
               </Link>
@@ -200,6 +197,5 @@ export default function Login() {
         </motion.div>
       </div>
     </>
-
   );
 }

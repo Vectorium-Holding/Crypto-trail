@@ -4,9 +4,9 @@ import Dashboard from "./Dashboard/page";
 const App = () => {
   return (
     <>
-      <Homepage/>
+      <Homepage />
     </>
   );
-}
+};
 
-export default App
+export default App;

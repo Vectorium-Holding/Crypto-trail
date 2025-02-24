@@ -10,31 +10,31 @@ const HeroSection = () => {
       transition={{ duration: 0.5 }}
     >
       <div
-        className="relative w-full bg-contain mt-20"
+        className="relative mt-20 w-full bg-contain"
         style={{ backgroundImage: "url('/bitcoin-emerald-city.png')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-left text-white px-4">
-          <div className=" font-cinzel md:max-w-5xl mx-auto">
-            <div className="text-[#C4A44D] mt-16 -ml-3 mb-8">
-              <h1 className="font-serif text-4xl md:text-[2.8rem] font-medium bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text text-transparent leading-relaxed">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-left text-white">
+          <div className="font-cinzel mx-auto md:max-w-5xl">
+            <div className="-ml-3 mb-8 mt-16 text-[#C4A44D]">
+              <h1 className="bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text font-serif text-4xl font-medium leading-relaxed text-transparent md:text-[2.8rem]">
                 Vectorium: Revolutionizing Sustainability with
               </h1>
-              <h1 className="font-serif text-4xl md:text-[2.8rem] font-medium bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text text-transparent leading-relaxe mt-4">
+              <h1 className="leading-relaxe mt-4 bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text font-serif text-4xl font-medium text-transparent md:text-[2.8rem]">
                 Crypto-Powered Carbon Credits
               </h1>
             </div>
-            <p className="font-raleway mt-4 text-md md:text-[1.05rem] text-base text-[##CFCBBF]-400 text-opacity-100 max-w-[56rem] -ml-3">
+            <p className="text-md text-[##CFCBBF]-400 -ml-3 mt-4 max-w-[56rem] font-raleway text-base text-opacity-100 md:text-[1.05rem]">
               Welcome to Vectorium, the world's first crypto marketplace for
               Voluntary Carbon Credits (VCCs). We're bridging the gap between
               carbon offset and blockchain technology.
             </p>
-            <div className="mt-6 flex gap-4 -ml-3 mb-10 ">
-              <button className="bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] hover:bg-yellow-600 text-black font-medium py-3 px-4 rounded-sm font-sans ">
+            <div className="-ml-3 mb-10 mt-6 flex gap-4">
+              <button className="rounded-sm bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] px-4 py-3 font-sans font-medium text-black hover:bg-yellow-600">
                 Start Trading
               </button>
-              <button className="bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] hover:bg-yellow-600 text-black font-medium font-sans py-3 px-6 rounded-sm">
+              <button className="rounded-sm bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] px-6 py-3 font-sans font-medium text-black hover:bg-yellow-600">
                 Learn More
               </button>
             </div>
@@ -42,7 +42,6 @@ const HeroSection = () => {
         </div>
       </div>
     </motion.div>
-
   );
 };
 
