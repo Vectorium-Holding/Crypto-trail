@@ -63,6 +63,7 @@ export default function SignUp() {
           setEmail("");
           setPassword("");
           setConfirmPassword("");
+          alert("We just send the Confirmation mail please confirm it.")
         }
       })
       .catch((err) => {
@@ -97,6 +98,7 @@ export default function SignUp() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex flex-row space-x-2 justify-between">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First Name</Label>
                 <Input
@@ -119,6 +121,7 @@ export default function SignUp() {
                   onChange={(e) => setLastName(e.target.value)}
                   required
                 />
+              </div>
               </div>
 
               <div className="space-y-2">

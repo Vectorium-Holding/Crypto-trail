@@ -20,61 +20,75 @@ export default function Login() {
 
   const router = useRouter();
 
-  // const handleLogin = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   // Simulate a login action (e.g., API request)
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //     alert("Logged in successfully");
-  //     // Redirect to another page after successful login
-  //     router.push("/");
-  //   }, 2000);
-
-  //   // // Mock API call
-  //   // setTimeout(() => {
-  //   //   const fakeToken = "123456abcdef";
-  //   //   const userData = { email };
-
-  //   //   login(fakeToken, userData);
-  //   //   setIsLoading(false);
-  //   // }, 2000);
-  // };
-
+  
   const [loading, setLoading] = useState<Boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = useState<Boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
 
+
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  
+  //   setLoading(true);
+  //   setError(null);
+  //   setSuccess(null);
+  
+  //   try {
+  //     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  
+  //     if (error) {
+  //       setError(error.message);
+  //     } else {
+  //       setSuccess("Login successful! Redirecting...");
+  //       localStorage.setItem("token", data.session.access_token);
+  //       localStorage.setItem("isLoggedIn",true)
+  //       alert("token"+data.session.access_token)
+  //       setIsLoggedIn(true);
+  //       router.push("/dashboard");
+  //       console.log("User Data:", data);
+  //     }
+  //   } catch (error) {
+  //     setError("An unexpected error occurred.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
     setLoading(true);
     setError(null);
     setSuccess(null);
-
-    supabase.auth
-      .signInWithPassword({ email, password })
-      .then(({ data, error }) => {
-        if (error) {
-          setError(error.message);
-        } else {
-          setSuccess("Login successful! Redirecting...");
-          setIsLoggedIn(true);
-          router.push("/Dashboard");
-          // Store token or redirect user
-          console.log("User Data:", data);
-          alert(`This is Access Token Token ${data.session.access_token}`);
-        }
-      })
-      .catch(() => {
-        setError("An unexpected error occurred.");
-      })
-      .finally(() => {
-        setLoading(false);
+  
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
+  
+      if (error) {
+        setError(error.message);
+      } else {
+        setSuccess("Login successful! Redirecting...");
+        setIsLoggedIn(true);
+        
+        // Store token and login status in localStorage
+        localStorage.setItem("token", data.session.access_token);
+        localStorage.setItem("isLoggedIn", "true");
+  
+        localStorage.setItem("userId", data.session.user.id);  // Store userId
+        router.push("/dashboard");
+      }
+    } catch {
+      setError("An unexpected error occurred.");
+    } finally {
+      setLoading(false);
+    }
   };
-
+  
   return (
     <>
       <Navbar />

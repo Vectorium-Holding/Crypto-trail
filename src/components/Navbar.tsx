@@ -30,15 +30,7 @@ const Navbar = () => {
         </div>
 
         {/* Globe Icon */}
-        {/* <Link href="/Search">
-        <Image
-          src="/globe.svg"
-          width={50}
-          height={50}
-          alt="Search Icon"
-          priority
-        />
-      </Link> */}
+
         <button
           onClick={() => {
             SetIsDropDownVisible(!isDropDownVisible);
@@ -54,14 +46,24 @@ const Navbar = () => {
         </button>
       </nav>
       {isDropDownVisible ? (
-        <div className="absolute right-8 top-20  bg-white flex flex-col px-3 py-3 text-center space-y-2">
+        <div className="absolute right-8 top-20  bg-white flex flex-col px-3 py-3 text-center space-y-2 z-20 hover:bg-gray-200">
           <Link href="/Login">
-            <button className=" bg-gray-600 w-32 py-2 text-white font-bold ">
+            <button className=" bg-gray-600 hover:bg-gray-900 w-32 py-2 text-white font-bold ">
               SignUp/Login
             </button>
           </Link>
+          <Link href="/Profile">
+            <button className=" bg-gray-600 hover:bg-gray-900 w-32 py-2 text-white font-bold ">
+              Profile
+            </button>
+          </Link>
+<Link href="/Logout">
+<button className=" bg-gray-600 hover:bg-gray-900 w-32 py-2 text-white font-bold ">
+  Logout
+  </button>
+</Link>
           <Link href="/dashboard">
-            <button className=" bg-gray-600 w-32 py-2 text-white font-bold ">
+            <button className=" bg-gray-600 hover:bg-gray-900 w-32 py-2 text-white font-bold ">
               Dashboard
             </button>
           </Link>
