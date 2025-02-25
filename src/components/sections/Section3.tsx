@@ -1,17 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 
-const Section3: React.FC = () => {
+const Section3 = forwardRef<HTMLDivElement, {}>((props, ref) => {
   const [count, setCount] = useState<number>(0);
-
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
   return (
-    <div className="container flex min-h-screen min-w-full items-center bg-[#1B1C1D] px-6 py-12">
+    <div ref={ref} className="container flex min-h-screen min-w-full items-center bg-[#1B1C1D] px-6 py-12">
       <div className="flex w-full flex-col items-center gap-12 md:flex-row">
         {/* Left - Image */}
         <motion.div
@@ -83,6 +82,6 @@ const Section3: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Section3;

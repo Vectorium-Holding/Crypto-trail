@@ -1,18 +1,27 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { RefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/navigation";
 import DropDown from "./DropDown";
 
-const Navbar = () => {
+interface NavbarProps {
+  section3Ref: RefObject<HTMLDivElement | null>;
+  section8Ref: RefObject<HTMLDivElement | null>;
+}
+const Navbar: React.FC<NavbarProps> = ({ section3Ref, section8Ref }) => {
   const { isLoggedIn } = useAuth();
+
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement | null>) => {
+    if (sectionRef?.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
 
   return (
     <nav className="fixed left-0 top-0 flex h-20 w-full items-center justify-between bg-gradient-to-r from-[#373636] via-[#212120] to-[#0b0b0b] px-10">
-      {/* Logo */}
       <Link href="/">
         <Image
           src="/vectorium-logo.png"
@@ -23,24 +32,27 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Navigation Links */}
       <div className="text-md leading-relaxe flex gap-12 bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] bg-clip-text font-prata text-transparent">
         {[
-          "Home",
-          "How It Works",
-          "Support",
-          "Marketplace",
-          "About",
-          "Search",
-        ].map((name, index) => (
-          <Link
+          { name: "Home", path: "/" },
+          { name: "How It Works", action: () => scrollToSection(section8Ref) },
+          { name: "Support", path: "/Support" },
+          { name: "Marketplace", path: "/Marketplace" },
+          { name: "About", action: () => scrollToSection(section3Ref) }, // Scrolls to Section8
+          { name: "Search", path: "/Search" },
+        ].map((item, index) => (
+          <span
             key={index}
-            href={name === "Home" ? "/" : `/${name.replace(/\s/g, "-")}`}
+            className="cursor-pointer hover:underline"
+            onClick={
+              item.action || (() => (window.location.href = item.path ?? "/"))
+            }
           >
-            <span className="cursor-pointer hover:underline">{name}</span>
-          </Link>
+            {item.name}
+          </span>
         ))}
       </div>
+
       {isLoggedIn ? (
         <DropDown />
       ) : (

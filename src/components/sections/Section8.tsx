@@ -1,13 +1,14 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 
 import { Label } from "../ui/label";
 
 import { motion } from "framer-motion";
 
-const Section8 = () => {
+
+  const Section8 = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
-    <section className="min-w-full bg-[#f2e782ff] text-black">
+    <section ref={ref} className="min-w-full bg-[#f2e782ff] text-black">
       <div className="flex h-full w-full flex-col">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
@@ -85,6 +86,6 @@ const Section8 = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Section8;
