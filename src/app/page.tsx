@@ -1,3 +1,6 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import Graph from "@/components/Graph";
 import Graph2 from "@/components/Graph2";
 import Navbar from "@/components/Navbar";
@@ -14,9 +17,13 @@ import Section3 from "@/components/Section3";
 import Section4 from "@/components/Section4";
 import Section5 from "@/components/Section5";
 import Section6 from "@/components/Section6";
-
-
 import Section7 from "@/components/Section7";
+// import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+// Dynamically import WalletMultiButton with SSR disabled
+const WalletMultiButton = dynamic(
+  async () => (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+  { ssr: false }
+);
 export default function Home() {
   return (
     <div className="bg-[#1b1c1d] h-screen flex flex-col items-center justify-center">
@@ -31,6 +38,11 @@ export default function Home() {
       <Section7/>
       <ForgotPassword/>
       <Login/>
+      <div className="flex items-center justify-center min-h-screen">
+      <div className="border hover:border-slate-900 rounded">
+        <WalletMultiButton />
+      </div>
+      </div>
     </div>
-  );
+);
 }
