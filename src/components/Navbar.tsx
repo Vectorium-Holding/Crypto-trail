@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ section3Ref, section8Ref }) => {
           { name: "Home", path: "/" },
           { name: "How It Works", action: () => scrollToSection(section8Ref) },
           { name: "Support", path: "/Support" },
-          { name: "Marketplace", path: "/Marketplace" },
+          { name: "Marketplace", path: "/market-place" },
           { name: "About", action: () => scrollToSection(section3Ref) }, // Scrolls to Section8
           { name: "Search", path: "/Search" },
         ].map((item, index) => (
@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ section3Ref, section8Ref }) => {
           variant="outline"
           className="rounded-sm bg-gradient-to-r from-[#C4A44D] via-[#f7f595] to-[#C4A44D] px-6 py-3 font-sans"
         >
-          <Link href="/Login">Login / Sign Up</Link>
+          <Link href="/login">Login / Sign Up</Link>
         </Button>
       )}
     </nav>
