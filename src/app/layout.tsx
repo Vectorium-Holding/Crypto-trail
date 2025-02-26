@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cinzel, Playfair_Display} from "next/font/google";
+import { Geist, Geist_Mono, Cinzel, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/context/AuthContext";
 import AppWalletProvider from "@/components/AppWalletProvider";
 
 const geistSans = Geist({
@@ -37,11 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="favicon.png" sizes="any" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${cinzel.variable} ${playfair.variable}antialiased`}
-      >
-        <AppWalletProvider>
-        {children}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable}antialiased`}
+      ><AppWalletProvider>
+        <AuthProvider>{children}</AuthProvider>
         </AppWalletProvider>
       </body>
     </html>
